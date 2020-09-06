@@ -1,0 +1,13 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/static/
+
+  profiles:
+    active: dev
+
+comment.avatar: /images/avatar.jpg

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">   <!--浏览器预览-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/my.css">
+    <title>搜索结果</title>
+</head>
+<body>
+<!--导航-->
+<!--组件，颜色反转，圆角，片段 <div class="ui container">-->
+<nav th:replace="_fragments :: menu(3)" class="ui inverted attached segment m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu m-padded-td-mini">
+            <h2 class="ui teal header item">FanBlog</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+            <div class="right m-item item m-mobile-hide ">
+                <div class="ui icon inverted input">
+                    <input type="text" placeholder="Search....">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<br>
+<!--中间内容-->
+<div id="waypoint" class="m-container-small m-padded-td-big">
+    <div class="ui container">
+        <!--header-->
+        <div class="ui top attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">博客</h3>
+                </div>
+                <div class="right aligned column">
+                    共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${page.totalElements}"> 14 </h2> 个
+                </div>
+            </div>
+        </div>
+        <!--显示栏-->
+        <div class="ui top attached teal segment">
+            <div class="ui padded vertical segment m-padded-td-large" th:each="blog : ${page.content}">
+                <div class="ui middle aligned mobile reversed stackable grid" >
+                    <div class="eleven wide column">
+                        <h3 class="ui header"><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}">你真的理解什么是财富自由吗?</a></h3>
+                        <p class="m-text" th:text="|${blog.description}.......|">正确做好任何- -件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已....</p>
+                        <div class="ui grid">
+                            <div class="eleven wide column ">
+                                <div class="ui mini horizontal link list">
+                                    <div class="item">
+                                        <img src="https://picsum.photos/id/1058/100/100" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image">
+                                        <div class="content"><a href="#"  class="header" th:href="@{/about}" th:text="${blog.user.nickname}">范龙斌</a></div>
+                                    </div>
+                                    <div class="item">
+                                        <i class="calendar alternate outline icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-08-20</span>
+                                    </div>
+                                    <div class="item">
+                                        <i class="eye icon"></i><span th:text="${blog.views}">555</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right aligned five wide column">
+                                <a href="#" th:href="@{/types/{id}(id=${blog.type.id})}" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.type.name}">认知升级</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank">
+                            <img src="https://picsum.photos/id/1058/230/150" th:src="@{${blog.firstPicture}}" alt="" class="ui rounded image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--footer-->
+        <div class="ui bottom attached segment">
+            <div class="ui middle aligned two column grid" th:if="${page.totalPages}>1">
+                <div class="column">
+                    <a href="#" th:href="@{/search/{querys}?page={page}(querys=${query},page=${page.number}-1)}" th:unless="${page.first}" class="ui basic teal mini button">上一页</a>
+                </div>
+                <div class="right aligned column">
+                    <a href="#" th:href="@{/search/{querys}?page={page}(querys=${query},page=${page.number}+1)}" th:unless="${page.last}" class="ui button teal mini basic">下一页</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none;">
+    <div class="ui animate__animated animate__bounce mini vertical icon button">
+        <div id="toTop-button" class="ui icon mini button"><i class="chevron up icon"></i></div>
+    </div>
+</div>
+<br>
+<br>
+<!--底部-->
+<footer th:replace="_fragments :: footer" class="ui vertical inverted segment m-padded-td-massive">
+    <div class="ui center aligned container">
+        <div class="ui stackable inverted divided grid">
+            <div class="three wide column">
+                <div class="ui link inverted list">
+                    <div class="item">
+                        <img src="../static/images/myWX.jpg" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-lined m-text-thin">最新博客</h4>
+                <div class="ui inverted link list m-text-lined m-opacity-mini m-text-thin">
+                    <a href="#" class="item">你好啊！你好啊</a>
+                    <a href="#" class="item">你好啊！</a>
+                    <a href="#" class="item">你好啊！</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-lined m-text-thin">联系我</h4>
+                <div class="ui inverted link list m-text-lined m-opacity-mini m-text-thin ">
+                    <a href="#" class="item">Email: 1148809967@qq.com</a>
+                    <a href="#" class="item">QQ: 1148809967</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-text-lined m-text-thin">FanBlog</h4>
+                <p class="m-text-lined m-opacity-mini m-text-thin">这是myfan的第一个博客，我也不知道会写什么，或许会给你们一点帮助，也请大佬们多多指教....</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-lined m-text-thin m-opacity-tiny">Copyright@2020-2021fan4 Designed by fan4</p>
+    </div>
+</footer>
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+<script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+<!--/*/</th:block>/*/-->
+<script>
+    //平滑
+    $('#toTop-button').click(function () {
+        $(window).scrollTo(0,600)
+    });
+    //滑动监测
+    var waypoint = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function(direction) {
+            if(direction == 'down') {
+                $('#toolbar').show(100);
+            }else{
+                $('#toolbar').hide();
+            }
+        }
+    });
+    //
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+</script>
+</body>
+</html>

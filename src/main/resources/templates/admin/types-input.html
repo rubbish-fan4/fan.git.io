@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">   <!--浏览器预览-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/my.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">
+    <title>分类新增</title>
+</head>
+<body>
+<!--导航-->
+<!--组件，颜色反转，圆角，片段 <div class="ui container">-->
+<nav th:replace="admin/_fragments :: menu(2)" class="ui inverted attached segment m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu m-padded-td-mini">
+            <h2 class="ui teal header item">管理后台</h2>
+            <a href="#" class="active m-item item m-mobile-hide"><i class="home icon"></i>博客</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+            <div class="right m-item m-mobile-hide menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img src="https://picsum.photos/id/1058/100/100" alt="" class="ui avatar image">
+                        范龙斌
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item">注销</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--二级导航-->
+<div class="ui attached pointing menu">
+    <div class="ui container">
+        <div class="right menu">
+            <a href="#" th:href="@{/admin/types/input}" class="teal active item">新增</a>
+            <a href="#" th:href="@{/admin/types}" class="item">列表</a>
+        </div>
+    </div>
+</div>
+<br>
+
+<!--中间内容-->
+<div class="m-container-small m-padded-td-big">
+    <div class="ui container">
+        <form action="#" method="post"  th:object="${type}" th:action="*{id}==null ? @{/admin/types} : @{/admin/types/{id}(id=*{id})}"  class="ui form">
+            <input type="hidden" name="id" th:value="*{id}">
+            <!--分类-->
+            <div class="required field">
+                <div class="ui teal labeled input">
+                    <label class="ui teal basic label">名称</label>
+                    <input type="text" name="name" placeholder="分类名称" th:value="*{name}">
+                </div>
+            </div>
+
+            <!--错误信息-->
+            <div class="ui error message"></div>
+            <!--/*/
+            <div class="ui negative message" th:if="${#fields.hasErrors('name')}">
+                <i class="close icon"></i>
+                <div class="header">验证失败</div>
+                <p th:errors="*{name}">提交信息不符合</p>
+            </div>
+            /*/-->
+            <!--按钮-->
+            <div class="ui right aligned container">
+                <button type="button" class="ui button" onclick="window.history.go(-1)">返回</button>
+                <button class="ui teal submit button">提交</button>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<!--底部-->
+<footer th:replace="admin/_fragments :: footer" class="ui vertical inverted segment m-padded-td-massive">
+    <div class="ui center aligned container">
+        <div class="ui stackable inverted divided grid">
+            <div class="three wide column">
+                <div class="ui link inverted list">
+                    <div class="item">
+                        <img src="../../static/images/myWX.jpg" th:src="@{/images/myWX.jpg}" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-lined m-text-thin">最新博客</h4>
+                <div class="ui inverted link list m-text-lined m-opacity-mini m-text-thin">
+                    <a href="#" class="item">你好啊！你好啊</a>
+                    <a href="#" class="item">你好啊！</a>
+                    <a href="#" class="item">你好啊！</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-lined m-text-thin">联系我</h4>
+                <div class="ui inverted link list m-text-lined m-opacity-mini m-text-thin ">
+                    <a href="#" class="item">Email: 1148809967@qq.com</a>
+                    <a href="#" class="item">QQ: 1148809967</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-text-lined m-text-thin">FanBlog</h4>
+                <p class="m-text-lined m-opacity-mini m-text-thin">这是myfan的第一个博客，我也不知道会写什么，或许会给你们一点帮助，也请大佬们多多指教....</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-lined m-text-thin m-opacity-tiny">Copyright@2020-2021fan4 Designed by fan4</p>
+    </div>
+</footer>
+
+<!--/*/<th:block th:replace="admin/_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+<script>
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+    $('.ui.dropdown').dropdown({
+        on : 'hover'
+    });
+    //检测非空
+    $('.ui.form').form ({
+        fields : {
+            name : {
+                identifier : 'name',
+                rules : [{
+                    type : 'empty',
+                    prompt : '空空如也也想提交？你确定！确定也不能'
+                }]
+            }
+        }
+    });
+</script>
+</body>
+</html>

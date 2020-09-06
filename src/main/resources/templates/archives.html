@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">   <!--浏览器预览-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/my.css">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
+    <title>归档</title>
+</head>
+<body>
+<!--导航-->
+<!--组件，颜色反转，圆角，片段 <div class="ui container">-->
+<nav th:replace="_fragments :: menu(4)" class="ui inverted attached segment m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu m-padded-td-mini">
+            <h2 class="ui teal header item">FanBlog</h2>
+            <a href="#" class="m-item item m-mobile-hide"><i class="home icon"></i>首页</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="idea icon"></i>分类</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="tags icon"></i>标签</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="clone icon"></i>归档</a>
+            <a href="#" class="m-item item m-mobile-hide"><i class="info icon"></i>关于我</a>
+            <div class="right m-item item m-mobile-hide ">
+                <div class="ui icon inverted input">
+                    <input type="text" placeholder="Search....">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<br>
+<!--中间内容-->
+<div id="waypoint" class="m-container-small js-toc-content m-padded-td-big">
+    <!--header-->
+    <div class="ui top attached padded segment">
+        <div class="ui middle aligned two column grid">
+            <div class="column">
+                <h3 class="ui teal header">归档</h3>
+            </div>
+            <div class="right aligned column">
+                共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${blogCount}"> 24 </h2> 篇
+            </div>
+        </div>
+    </div>
+    <th:block th:each="item : ${archives}">
+        <h1 id="2020" class="ui center aligned header" th:text="${item.key}">2020</h1>
+        <div class="ui top attached fluid vertical menu">
+            <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog : ${item.value}">
+        <span>
+            <i class="mini teal circle icon"></i>&nbsp;&nbsp;<span th:text="${blog.title}">无奈的关怀</span>
+            <div class="ui teal basic left pointing label m-padded-mini" th:text="${#dates.format(blog.updateTime,'MMMdd')}">8月21</div>
+        </span>
+                <div class="ui orange basic left pointing label" th:text="${blog.flag}">转载</div>
+            </a>
+        </div>
+    </th:block>
+
+
+</div>
+<!--侧边导航-->
+<div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none;">
+    <div class="ui animate__animated animate__bounce mini vertical icon buttons">
+        <button type="button" class="ui toc teal button">目录</button>
+        <div id="toTop-button" class="ui icon mini button"><i class="chevron up icon"></i></div>
+    </div>
+
+    <div class="ui toc-container flowing popup transition hidden" style="width: 220px !important;">
+        <ol class="js-toc"></ol>
+    </div>
+</div>
+<br>
+<br>
+<!--底部-->
+<footer th:replace="_fragments :: footer" class="ui vertical inverted segment m-padded-td-massive">
+    <div class="ui center aligned container">
+        <div class="ui stackable inverted divided grid">
+            <div class="three wide column">
+                <div class="ui link inverted list">
+                    <div class="item">
+                        <img src="../static/images/myWX.jpg" class="ui rounded image" alt="" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-lined m-text-thin">最新博客</h4>
+                <div class="ui inverted link list m-text-lined m-opacity-mini m-text-thin">
+                    <a href="#" class="item">你好啊！你好啊</a>
+                    <a href="#" class="item">你好啊！</a>
+                    <a href="#" class="item">你好啊！</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header m-text-lined m-text-thin">联系我</h4>
+                <div class="ui inverted link list m-text-lined m-opacity-mini m-text-thin ">
+                    <a href="#" class="item">Email: 1148809967@qq.com</a>
+                    <a href="#" class="item">QQ: 1148809967</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header m-text-lined m-text-thin">FanBlog</h4>
+                <p class="m-text-lined m-opacity-mini m-text-thin">这是myfan的第一个博客，我也不知道会写什么，或许会给你们一点帮助，也请大佬们多多指教....</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-lined m-text-thin m-opacity-tiny">Copyright@2020-2021fan4 Designed by fan4</p>
+    </div>
+</footer>
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+<script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+<script src="../static/lib/tocbot/tocbot.min.js"></script>
+<!--/*/</th:block>/*/-->
+<script>
+    //初始化目录组件
+    tocbot.init({
+        //目录初始化到哪个区域
+        tocSelector: '.js-toc',
+        //生成目录的内容的源在哪
+        contentSelector: '.js-toc-content',
+        //目录的级别
+        headingSelector: 'h1',
+    });
+    //目录图片显示
+    $('.toc').popup({
+        popup : $('.toc-container.popup'),
+        on : 'click',
+        position : 'left center'
+    });
+    //平滑
+    $('#toTop-button').click(function () {
+        $(window).scrollTo(0,600)
+    });
+    //滑动监测
+    var waypoint = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function(direction) {
+            if(direction == 'down') {
+                $('#toolbar').show(100);
+            }else{
+                $('#toolbar').hide();
+            }
+        }
+    });
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+</script>
+</body>
+</html>

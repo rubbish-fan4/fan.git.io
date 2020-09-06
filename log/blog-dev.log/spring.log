@@ -1,0 +1,147 @@
+2020-09-06 10:57:48.340  INFO 14360 --- [restartedMain] com.xin.MyblogApplication                : Starting MyblogApplication on DESKTOP-D88BV2I with PID 14360 (D:\Software\idea\xin_Project\myblog\target\classes started by 11488 in D:\Software\idea\xin_Project\myblog)
+2020-09-06 10:57:48.348 DEBUG 14360 --- [restartedMain] com.xin.MyblogApplication                : Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-09-06 10:57:48.349  INFO 14360 --- [restartedMain] com.xin.MyblogApplication                : The following profiles are active: dev
+2020-09-06 10:57:48.495  INFO 14360 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-06 10:57:48.496  INFO 14360 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-06 10:57:49.910  INFO 14360 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-09-06 10:57:50.035  INFO 14360 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 113ms. Found 5 JPA repository interfaces.
+2020-09-06 10:57:51.042  INFO 14360 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8085 (http)
+2020-09-06 10:57:51.056  INFO 14360 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-06 10:57:51.057  INFO 14360 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-06 10:57:51.201  INFO 14360 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-06 10:57:51.201  INFO 14360 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2705 ms
+2020-09-06 10:57:51.456  INFO 14360 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-06 10:57:51.547  INFO 14360 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-06 10:57:51.711  INFO 14360 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-06 10:57:51.826  WARN 14360 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-06 10:57:51.959  INFO 14360 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-06 10:57:52.131  INFO 14360 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-06 10:57:52.436  INFO 14360 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-09-06 10:57:53.217  INFO 14360 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-06 10:57:53.285  INFO 14360 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8085 (http) with context path ''
+2020-09-06 10:57:53.291  INFO 14360 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-09-06 10:57:53.415  INFO 14360 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-06 10:57:53.461  INFO 14360 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-09-06 10:57:54.961  INFO 14360 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-06 10:57:54.971  INFO 14360 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-09-06 10:57:56.088  INFO 14360 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-09-06 10:57:56.102  INFO 14360 --- [restartedMain] com.xin.MyblogApplication                : Started MyblogApplication in 8.807 seconds (JVM running for 11.522)
+2020-09-06 10:58:04.036  INFO 14360 --- [http-nio-8085-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-06 10:58:04.036  INFO 14360 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-06 10:58:04.057  INFO 14360 --- [http-nio-8085-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 21 ms
+2020-09-06 10:58:04.268  WARN 14360 --- [http-nio-8085-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-09-06 10:58:04.300  WARN 14360 --- [http-nio-8085-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-09-06 10:58:05.222  INFO 14360 --- [http-nio-8085-exec-10] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:05.231  INFO 14360 --- [http-nio-8085-exec-10] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:05.299  INFO 14360 --- [http-nio-8085-exec-3] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:05.299  INFO 14360 --- [http-nio-8085-exec-3] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:05.317  INFO 14360 --- [http-nio-8085-exec-2] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:05.317  INFO 14360 --- [http-nio-8085-exec-2] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:05.330  INFO 14360 --- [http-nio-8085-exec-1] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:05.330  INFO 14360 --- [http-nio-8085-exec-1] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:05.339  INFO 14360 --- [http-nio-8085-exec-4] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:05.339  INFO 14360 --- [http-nio-8085-exec-4] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:05.350  INFO 14360 --- [http-nio-8085-exec-7] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:05.350  INFO 14360 --- [http-nio-8085-exec-7] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:05.412  INFO 14360 --- [http-nio-8085-exec-9] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:05.412  INFO 14360 --- [http-nio-8085-exec-9] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:05.438  INFO 14360 --- [http-nio-8085-exec-10] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:05.439  INFO 14360 --- [http-nio-8085-exec-10] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:05.482  INFO 14360 --- [http-nio-8085-exec-5] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:05.482  INFO 14360 --- [http-nio-8085-exec-5] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:10.709  INFO 14360 --- [http-nio-8085-exec-2] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:10.709  INFO 14360 --- [http-nio-8085-exec-2] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:10.795  INFO 14360 --- [http-nio-8085-exec-1] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:58:10.796  INFO 14360 --- [http-nio-8085-exec-1] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:58:16.074  INFO 14360 --- [http-nio-8085-exec-4] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.login', args=[xin, 170372105, org.apache.catalina.session.StandardSessionFacade@16d9aae6, {}]}
+2020-09-06 10:58:16.090  INFO 14360 --- [http-nio-8085-exec-4] com.xin.aspect.LogAspect                 : Result : /admin/index
+2020-09-06 10:58:16.255  INFO 14360 --- [http-nio-8085-exec-8] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.newBlogs', args=[{}]}
+2020-09-06 10:58:16.266  INFO 14360 --- [http-nio-8085-exec-8] com.xin.aspect.LogAspect                 : Result : /admin/_fragments :: newBlogList
+2020-09-06 10:59:33.411  INFO 14360 --- [http-nio-8085-exec-8] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin/logout', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.logout', args=[org.apache.catalina.session.StandardSessionFacade@16d9aae6]}
+2020-09-06 10:59:33.411  INFO 14360 --- [http-nio-8085-exec-8] com.xin.aspect.LogAspect                 : Result : redirect:/admin
+2020-09-06 10:59:33.432  INFO 14360 --- [http-nio-8085-exec-1] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:33.432  INFO 14360 --- [http-nio-8085-exec-1] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:59:33.469  INFO 14360 --- [http-nio-8085-exec-9] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:33.470  INFO 14360 --- [http-nio-8085-exec-9] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:59:44.701 ERROR 14360 --- [http-nio-8085-exec-7] c.x.handler.ControllerExceptionHandler   : Requst URL : http://localhost:8085/admin/login，Exception : {}
+
+org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.handleNoMatch(RequestMappingInfoHandlerMapping.java:213)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lookupHandlerMethod(AbstractHandlerMethodMapping.java:422)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.getHandlerInternal(AbstractHandlerMethodMapping.java:367)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:110)
+	at org.springframework.web.servlet.mvc.method.RequestMappingInfoHandlerMapping.getHandlerInternal(RequestMappingInfoHandlerMapping.java:59)
+	at org.springframework.web.servlet.handler.AbstractHandlerMapping.getHandler(AbstractHandlerMapping.java:395)
+	at org.springframework.web.servlet.DispatcherServlet.getHandler(DispatcherServlet.java:1234)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1016)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-09-06 10:59:44.703  WARN 14360 --- [http-nio-8085-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-09-06 10:59:44.764  INFO 14360 --- [http-nio-8085-exec-8] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:44.764  INFO 14360 --- [http-nio-8085-exec-8] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:59:44.770  INFO 14360 --- [http-nio-8085-exec-1] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:44.771  INFO 14360 --- [http-nio-8085-exec-1] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:59:44.780  INFO 14360 --- [http-nio-8085-exec-4] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:44.781  INFO 14360 --- [http-nio-8085-exec-4] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:59:44.786  INFO 14360 --- [http-nio-8085-exec-9] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:44.786  INFO 14360 --- [http-nio-8085-exec-9] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:59:44.793  INFO 14360 --- [http-nio-8085-exec-7] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:44.793  INFO 14360 --- [http-nio-8085-exec-7] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:59:56.097  INFO 14360 --- [http-nio-8085-exec-10] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:56.097  INFO 14360 --- [http-nio-8085-exec-10] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:59:56.163  INFO 14360 --- [http-nio-8085-exec-2] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:56.163  INFO 14360 --- [http-nio-8085-exec-2] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 10:59:56.500  INFO 14360 --- [http-nio-8085-exec-6] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 10:59:56.500  INFO 14360 --- [http-nio-8085-exec-6] com.xin.aspect.LogAspect                 : Result : /admin/login
+2020-09-06 11:00:01.253  INFO 14360 --- [http-nio-8085-exec-3] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin/login', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.login', args=[xin, 170372105, org.apache.catalina.session.StandardSessionFacade@16d9aae6, {}]}
+2020-09-06 11:00:01.259  INFO 14360 --- [http-nio-8085-exec-3] com.xin.aspect.LogAspect                 : Result : /admin/index
+2020-09-06 11:00:01.394  INFO 14360 --- [http-nio-8085-exec-2] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.newBlogs', args=[{}]}
+2020-09-06 11:00:01.404  INFO 14360 --- [http-nio-8085-exec-2] com.xin.aspect.LogAspect                 : Result : /admin/_fragments :: newBlogList
+2020-09-06 11:00:10.092  INFO 14360 --- [http-nio-8085-exec-6] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin/types', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.TypeController.types', args=[Page request [number: 0, size 5, sort: id: DESC], {}]}
+2020-09-06 11:00:10.111  INFO 14360 --- [http-nio-8085-exec-6] com.xin.aspect.LogAspect                 : Result : /admin/types
+2020-09-06 11:00:10.284  INFO 14360 --- [http-nio-8085-exec-7] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.newBlogs', args=[{}]}
+2020-09-06 11:00:10.295  INFO 14360 --- [http-nio-8085-exec-7] com.xin.aspect.LogAspect                 : Result : /admin/_fragments :: newBlogList
+2020-09-06 11:00:11.585  INFO 14360 --- [http-nio-8085-exec-5] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin/tags', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.TagsController.tags', args=[Page request [number: 0, size 5, sort: id: DESC], {}]}
+2020-09-06 11:00:11.607  INFO 14360 --- [http-nio-8085-exec-5] com.xin.aspect.LogAspect                 : Result : /admin/tags
+2020-09-06 11:00:11.756  INFO 14360 --- [http-nio-8085-exec-4] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.newBlogs', args=[{}]}
+2020-09-06 11:00:11.765  INFO 14360 --- [http-nio-8085-exec-4] com.xin.aspect.LogAspect                 : Result : /admin/_fragments :: newBlogList
+2020-09-06 11:05:02.820  INFO 14360 --- [http-nio-8085-exec-8] com.xin.aspect.LogAspect                 : Request : {url='http://localhost:8085/admin', ip='0:0:0:0:0:0:0:1', classMethod='com.xin.web.LoginController.loginPage', args=[]}
+2020-09-06 11:05:02.821  INFO 14360 --- [http-nio-8085-exec-8] com.xin.aspect.LogAspect                 : Result : /admin/login
